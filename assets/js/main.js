@@ -15,6 +15,37 @@
   var CFG = window.UAT_CONFIG || {};
   var PAGE_LOAD_TIME = Date.now();
 
+  /* ---------- Ad / Analytics tracking init ---------- */
+  (function initAdTracking() {
+    var ga4Id = CFG.ga4MeasurementId;
+    if (ga4Id && ga4Id.indexOf('PLACEHOLDER') === -1) {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4Id;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', ga4Id);
+    }
+
+    var metaId = CFG.metaPixelId;
+    if (metaId && metaId.indexOf('PLACEHOLDER') === -1) {
+      (function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+        if (!f._fbq) f._fbq = n;
+        n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+        t = b.createElement(e); t.async = !0; t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      window.fbq('init', metaId);
+      window.fbq('track', 'PageView');
+    }
+  })();
+
   document.addEventListener('DOMContentLoaded', function () {
 
     /* ---------- 1. Phone number injection ---------- */
@@ -389,10 +420,35 @@
       });
     })();
 
+    /* Event name mapping: internal → platform standard names */
+    var GA4_EVENT_MAP = {
+      call_click: 'generate_lead',
+      callback_requested: 'generate_lead',
+      lead_captured: 'generate_lead'
+    };
+    var META_EVENT_MAP = {
+      call_click: 'Contact',
+      callback_requested: 'Lead',
+      lead_captured: 'Lead'
+    };
+
     function pushEvent(name, detail) {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push(Object.assign({ event: name }, detail));
       console.log('[analytics]', name, detail);
+
+      /* GA4: fire generic event, plus mapped conversion event */
+      if (window.gtag) {
+        window.gtag('event', name, detail);
+        if (GA4_EVENT_MAP[name]) {
+          window.gtag('event', GA4_EVENT_MAP[name], detail);
+        }
+      }
+
+      /* Meta Pixel: fire mapped standard event */
+      if (window.fbq && META_EVENT_MAP[name]) {
+        window.fbq('track', META_EVENT_MAP[name]);
+      }
     }
 
     /* Click-to-call tracking — fires before the tel: link navigates away */
