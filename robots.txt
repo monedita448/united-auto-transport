@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.www.united-autotransport.com/sitemap.xml
+Sitemap: https://www.united-autotransport.com/sitemap.xml
