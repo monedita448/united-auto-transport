@@ -1,0 +1,330 @@
+/* =========================================================
+   UNITED AUTO TRANSPORT — UNIFIED DESIGN SYSTEM (v3, dark theme)
+   One consistent theme sitewide. No segmented/luxury variants.
+   Brand: navy (dominant/trust, now a layering tone on a near-black
+   navy backdrop) + orange (CTA-only accent — kept strictly reserved
+   for conversion actions; see PROJECT_BRIEF.md for the reasoning —
+   the client's reference dashboard uses orange decoratively across
+   badges/avatars, which we deliberately did NOT copy, since that
+   would break the Von Restorff isolation effect this palette relies
+   on to make "click here" unambiguous on a lead-gen site).
+   All text/bg pairs below re-verified against WCAG AA programmatically
+   after the background inverted from light to dark.
+   No stock photography — brand system (logo, color, icons) carries
+   the visual weight. Performance: single CSS file, one Google Font,
+   inline SVG icons (zero icon-font / image requests).
+   ========================================================= */
+
+:root {
+  --navy: #0B2A4A;
+  --navy-dark: #050B16;
+  --navy-soft: #1B3A66;
+  --orange: #E8871E;
+  --orange-dark: #C96E0F;
+  --on-orange: #402400;
+
+  --bg: #081226;
+  --surface: #101F3D;
+  --surface-alt: #0C1A33;
+  --ink: #F5F7FA;
+  --ink-soft: #B6C2D6;
+  --ink-faint: #93A1B8; /* re-verified on dark bg: 7.14:1 on --bg, 6.25:1 on --surface — both clear AA passes */
+  --border: rgba(255, 255, 255, 0.1);
+  --success: #2ECC71; /* brightened from the light-theme #1F8A50, which only hit 4.28:1 on the new dark bg */
+
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --container: 1140px;
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.35);
+  --shadow-lift: 0 18px 44px rgba(0, 0, 0, 0.5);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 0;
+}
+body.has-sticky-cta { padding-bottom: 72px; }
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+h1, h2, h3, h4 { line-height: 1.15; font-weight: 700; }
+.icon { flex-shrink: 0; }
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+.section { padding: 64px 0; }
+.section-tight { padding: 44px 0; }
+.section-alt { background: var(--surface-alt); }
+.eyebrow {
+  display: inline-block; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--orange-dark); margin-bottom: 12px;
+}
+h1 { font-size: clamp(2rem, 4.2vw, 3.1rem); }
+h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); margin-bottom: 14px; }
+h3 { font-size: 1.15rem; margin-bottom: 6px; }
+p { color: var(--ink-soft); }
+.lede { font-size: 1.08rem; color: var(--ink-soft); max-width: 600px; }
+.center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* Visually hidden but screen-reader accessible - used for labels on
+   compact inline forms (e.g. the callback widget) where a visible
+   label would break the layout but an input still needs one. */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* Honeypot field for bot protection on lead forms — invisible and
+   unreachable to real visitors (off-screen, not tabbable, hidden from
+   screen readers), but most auto-fill bots populate every field they
+   find in the DOM regardless of visibility. See main.js for the check. */
+.hp-field {
+  position: absolute; left: -9999px; top: -9999px; width: 1px; height: 1px;
+  overflow: hidden; opacity: 0;
+}
+
+/* Skip link - accessibility */
+.skip-link {
+  position: absolute; left: -999px; top: 0; background: var(--navy); color: #fff;
+  padding: 10px 16px; border-radius: 0 0 8px 0; z-index: 200; font-weight: 600;
+}
+.skip-link:focus { left: 0; }
+
+/* Focus visibility - accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2.5px solid var(--orange); outline-offset: 2px; border-radius: 4px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 26px; border-radius: var(--radius-sm); font-weight: 700; font-size: 0.96rem;
+  transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease), background 0.18s var(--ease);
+  white-space: nowrap;
+}
+.btn-primary { background: var(--orange); color: var(--on-orange); box-shadow: var(--shadow-soft); }
+.btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+.btn-navy { background: var(--navy); color: #fff; }
+.btn-navy:hover { background: var(--navy-soft); transform: translateY(-2px); }
+.btn-outline { border: 1.5px solid var(--border); color: var(--ink); }
+.btn-outline:hover { border-color: var(--navy-soft); background: var(--surface-alt); }
+.btn-lg { padding: 16px 30px; font-size: 1.02rem; }
+.btn-block { width: 100%; }
+
+/* ---------- Utility bar ---------- */
+.utility-bar { background: var(--navy-dark); color: #CBD8E6; font-size: 0.8rem; padding: 8px 0; }
+.utility-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.utility-bar a { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: #fff; }
+.utility-bar .u-left, .utility-bar .u-right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.utility-bar .hours-note { opacity: 0.85; }
+
+/* ---------- Header / Nav ---------- */
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(8, 18, 38, 0.9); border-bottom: 1px solid var(--border); backdrop-filter: blur(6px); }
+.nav-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.12rem; color: var(--ink); }
+.nav-links { display: flex; align-items: center; gap: 26px; }
+.nav-links a {
+  display: inline-flex; align-items: center; gap: 4px; line-height: 1;
+  font-weight: 600; font-size: 0.92rem; color: var(--ink-soft); transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-cta { display: flex; align-items: center; gap: 12px; }
+.nav-toggle { display: none; }
+.dropdown { position: relative; }
+.dropdown-menu {
+  position: absolute; top: 130%; left: 0; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-lift); min-width: 230px; padding: 8px;
+  opacity: 0; visibility: hidden; transform: translateY(6px); transition: all 0.18s var(--ease);
+}
+.dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.dropdown-menu a { display: block; padding: 10px 12px; border-radius: var(--radius-sm); font-size: 0.88rem; }
+.dropdown-menu a:hover { background: var(--surface-alt); }
+
+/* ---------- Logo mark (road-integrated U) ---------- */
+.logo-mark { border-radius: 8px; }
+
+/* ---------- Hero: flowing overlap layout ---------- */
+.hero-navy { background: var(--navy); padding: 40px 0 44px; position: relative; }
+.hero-navy .container { text-align: center; }
+.hero-navy .eyebrow { color: #9FC1E8; }
+.hero-navy h1 { color: #fff; max-width: 760px; margin: 0 auto 14px; }
+.hero-navy p.lede { color: #B9CBDF; margin: 0 auto; }
+.hero-navy .cta-row { display: flex; justify-content: center; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
+
+/* No negative margin here on purpose — pixel-overlap tricks against
+   variable-height text (different line counts per viewport) kept
+   clipping content. Plain positive spacing plus the lifted shadow
+   gives a "floating card" feel without any risk of overlap. */
+.overlap-card {
+  max-width: 620px; margin: 28px auto 0; background: var(--surface); border-radius: var(--radius-lg);
+  border: 1px solid var(--border); box-shadow: var(--shadow-lift); padding: 26px; position: relative; z-index: 2;
+}
+.or-divider { display: flex; align-items: center; gap: 12px; margin: 16px 0; color: var(--ink-faint); font-size: 0.82rem; font-weight: 600; }
+.or-divider::before, .or-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ---------- Callback micro-widget ---------- */
+.callback-form { display: flex; gap: 10px; flex-wrap: wrap; }
+.callback-form input {
+  flex: 1; min-width: 180px; padding: 13px 14px; border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border); background: var(--bg); color: var(--ink);
+  font: inherit; font-size: 0.95rem; transition: border-color 0.2s;
+}
+.callback-form input:focus { outline: none; border-color: var(--orange); }
+.callback-form.has-error input[required] { border-color: #F0644F; }
+.callback-note { font-size: 0.8rem; color: var(--ink-faint); margin-top: 10px; }
+
+/* ---------- Trust strip ---------- */
+.trust-strip { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 22px 0; }
+.trust-row { display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.88rem; color: var(--ink-soft); }
+.trust-item .stars { color: #E8A02E; letter-spacing: 1px; }
+
+/* ---------- Grids / Cards ---------- */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 26px; transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease); }
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+.icon-tile { width: 44px; height: 44px; border-radius: 10px; background: var(--surface-alt); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; color: var(--ink); }
+
+.service-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 26px; }
+.service-card .icon-tile { background: var(--navy); color: #fff; width: 48px; height: 48px; }
+.service-card .tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange-dark); }
+
+/* ---------- Process steps ---------- */
+.steps-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.step-item { position: relative; }
+.step-num { width: 42px; height: 42px; border-radius: 50%; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 16px; }
+
+/* ---------- Quote calculator ---------- */
+.quote-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); padding: 26px; }
+.quote-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.quote-steps { display: flex; gap: 6px; margin-bottom: 20px; }
+.quote-steps .qs-bar { flex: 1; height: 4px; border-radius: 4px; background: var(--surface-alt); overflow: hidden; }
+.quote-steps .qs-bar.active, .quote-steps .qs-bar.done { background: var(--orange); }
+.quote-step { display: none; animation: fadeIn 0.22s var(--ease); }
+.quote-step.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.quote-progress-label { font-size: 0.76rem; font-weight: 700; color: var(--ink-faint); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.field { margin-bottom: 15px; }
+.field label { display: block; font-size: 0.82rem; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
+.field input, .field select {
+  width: 100%; padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--border);
+  background: var(--bg); color: var(--ink); font: inherit; font-size: 0.95rem; transition: border-color 0.2s;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--orange); }
+.field .hint { font-size: 0.76rem; color: var(--ink-faint); margin-top: 4px; }
+.field .error { font-size: 0.78rem; color: #F0644F; margin-top: 4px; display: none; }
+.field.has-error input { border-color: #F0644F; }
+.field.has-error .error { display: block; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* ---------- Custom date picker ----------
+   Replaces the native <input type="date">, whose calendar popup is
+   rendered entirely by the browser/OS and can't be resized or restyled
+   with CSS — hand-built to match the theme with larger, easier-to-hit
+   day cells, no dependency. */
+.date-picker { position: relative; }
+.date-picker input { cursor: pointer; padding-right: 42px; }
+.date-picker-icon { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--ink-faint); pointer-events: none; }
+.date-picker-panel {
+  position: absolute; top: calc(100% + 8px); left: 0; z-index: 60; width: 300px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lift); padding: 16px;
+  opacity: 0; visibility: hidden; transform: translateY(6px);
+  transition: opacity 0.18s var(--ease), transform 0.18s var(--ease), visibility 0.18s;
+}
+.date-picker-panel.dp-open { opacity: 1; visibility: visible; transform: translateY(0); }
+.dp-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.dp-month-label { font-weight: 700; font-size: 0.95rem; }
+.dp-nav { width: 32px; height: 32px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: var(--ink); transition: background 0.15s var(--ease); }
+.dp-nav:hover { background: var(--surface-alt); }
+.dp-nav:not(.dp-next) svg { transform: rotate(90deg); }
+.dp-nav.dp-next svg { transform: rotate(-90deg); }
+.dp-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); margin-bottom: 4px; }
+.dp-weekdays span { text-align: center; font-size: 0.72rem; font-weight: 700; color: var(--ink-faint); padding: 4px 0; }
+.dp-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+.dp-day {
+  aspect-ratio: 1; display: flex; align-items: center; justify-content: center; min-height: 36px;
+  border-radius: var(--radius-sm); font-size: 0.88rem; font-weight: 600; color: var(--ink-soft);
+  transition: background 0.15s var(--ease), color 0.15s var(--ease);
+}
+.dp-day:hover:not(.dp-disabled) { background: var(--surface-alt); color: var(--ink); }
+.dp-day.dp-today { border: 1.5px solid var(--navy-soft); }
+.dp-day.dp-selected { background: var(--orange); color: var(--on-orange); }
+.dp-day.dp-disabled { color: var(--ink-faint); opacity: 0.35; cursor: default; pointer-events: none; }
+.dp-day.dp-outside { visibility: hidden; }
+@media (max-width: 380px) {
+  .date-picker-panel { width: 264px; left: 50%; transform: translate(-50%, 6px); }
+  .date-picker-panel.dp-open { transform: translate(-50%, 0); }
+}
+
+.choice-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
+.choice-card { border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 13px; cursor: pointer; text-align: center; transition: all 0.16s var(--ease); font-weight: 700; font-size: 0.86rem; color: var(--ink-soft); }
+.choice-card:hover { border-color: var(--navy-soft); }
+.choice-card.selected { border-color: var(--orange); background: var(--surface-alt); color: var(--ink); }
+
+.quote-nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 20px; }
+.quote-success { text-align: center; padding: 16px 0; }
+.quote-success .check-circle { width: 56px; height: 56px; border-radius: 50%; background: var(--success); color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+
+/* ---------- FAQ Accordion ---------- */
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 4px; font-weight: 700; font-size: 0.98rem; text-align: left; color: var(--ink); }
+.faq-q .chev { transition: transform 0.22s var(--ease); color: var(--ink-faint); }
+.faq-item.open .faq-q .chev { transform: rotate(180deg); color: var(--ink); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s var(--ease); }
+.faq-a p { padding: 0 4px 18px; }
+.faq-item.open .faq-a { max-height: 400px; }
+
+/* ---------- Sticky mobile call/callback bar ---------- */
+.sticky-cta-bar {
+  display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 150;
+  background: var(--surface); border-top: 1px solid var(--border); box-shadow: 0 -6px 24px rgba(0,0,0,0.45);
+  padding: 10px 14px; gap: 10px;
+}
+.sticky-cta-bar .btn { flex: 1; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--navy-dark); color: #B9C8D9; padding: 52px 0 22px; margin-top: 56px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 30px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+.footer-grid h4 { color: #fff; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px; }
+.footer-grid ul li { margin-bottom: 9px; font-size: 0.88rem; }
+.footer-grid ul li a:hover { color: #fff; }
+.footer-compliance { font-size: 0.82rem; padding-top: 20px; opacity: 0.85; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 18px; font-size: 0.78rem; opacity: 0.7; flex-wrap: wrap; gap: 8px; }
+
+/* ---------- Misc ---------- */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 46px; align-items: center; }
+.divider { height: 1px; background: var(--border); margin: 48px 0; }
+.route-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 100px; background: var(--surface-alt); font-weight: 700; font-size: 0.9rem; color: var(--ink); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .grid-3, .grid-4, .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-row { grid-template-columns: 1fr; }
+  .split { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: inline-flex; }
+  .grid-2, .grid-3, .grid-4, .footer-grid { grid-template-columns: 1fr; }
+  .field-row, .choice-row { grid-template-columns: 1fr; }
+  .utility-bar .u-right { display: none; }
+  .section { padding: 44px 0; }
+  .sticky-cta-bar { display: flex; }
+  body.has-sticky-cta { padding-bottom: 76px; }
+  .hero-navy .cta-row .btn { width: 100%; }
+}
