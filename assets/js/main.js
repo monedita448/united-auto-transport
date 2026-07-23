@@ -15,34 +15,65 @@
   var CFG = window.UAT_CONFIG || {};
   var PAGE_LOAD_TIME = Date.now();
 
-  /* ---------- Ad / Analytics tracking init ---------- */
+  /* ---------- Ad / Analytics tracking init ----------
+     Stubs (dataLayer queue, gtag, fbq) are set up immediately so
+     pushEvent() can queue events from the first interaction.
+     Actual <script> injection is deferred until after the page has
+     painted — via requestIdleCallback with a 3 s timeout fallback —
+     keeping third-party JS off the critical rendering path. */
   (function initAdTracking() {
     var ga4Id = CFG.ga4MeasurementId;
+    var metaId = CFG.metaPixelId;
+
+    /* --- Set up stubs immediately so pushEvent() works from any time --- */
     if (ga4Id && ga4Id.indexOf('PLACEHOLDER') === -1) {
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4Id;
-      document.head.appendChild(s);
       window.dataLayer = window.dataLayer || [];
       function gtag() { window.dataLayer.push(arguments); }
       window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', ga4Id);
     }
 
-    var metaId = CFG.metaPixelId;
     if (metaId && metaId.indexOf('PLACEHOLDER') === -1) {
-      (function (f, b, e, v, n, t, s) {
+      (function (f, b, e, v, n) {
         if (f.fbq) return;
         n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
         if (!f._fbq) f._fbq = n;
         n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
-        t = b.createElement(e); t.async = !0; t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
       })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-      window.fbq('init', metaId);
-      window.fbq('track', 'PageView');
+    }
+
+    /* --- Defer actual script injection until after first paint --- */
+    function loadScripts() {
+      if (ga4Id && ga4Id.indexOf('PLACEHOLDER') === -1) {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4Id;
+        document.head.appendChild(s);
+        gtag('js', new Date());
+        gtag('config', ga4Id);
+      }
+      if (metaId && metaId.indexOf('PLACEHOLDER') === -1) {
+        var t = document.createElement('script');
+        t.async = true;
+        t.src = 'https://connect.facebook.net/en_US/fbevents.js';
+        var ref = document.getElementsByTagName('script')[0];
+        if (ref) ref.parentNode.insertBefore(t, ref);
+        window.fbq('init', metaId);
+        window.fbq('track', 'PageView');
+      }
+    }
+
+    function scheduleLoad() {
+      if (window.requestIdleCallback) {
+        window.requestIdleCallback(loadScripts, { timeout: 3000 });
+      } else {
+        setTimeout(loadScripts, 1500);
+      }
+    }
+
+    if (document.readyState === 'complete') {
+      scheduleLoad();
+    } else {
+      window.addEventListener('load', function () { setTimeout(scheduleLoad, 0); });
     }
   })();
 
