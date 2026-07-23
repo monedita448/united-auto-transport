@@ -318,7 +318,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .split { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
-  .nav-links { display: none; }
+  .nav-links, .nav-cta { display: none; }
   .nav-toggle { display: inline-flex; }
   .grid-2, .grid-3, .grid-4, .footer-grid { grid-template-columns: 1fr; }
   .field-row, .choice-row { grid-template-columns: 1fr; }
