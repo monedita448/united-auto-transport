@@ -202,6 +202,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .callback-form input:focus { outline: none; border-color: var(--orange); }
 .callback-form.has-error input[required] { border-color: #F0644F; }
+.callback-btn-row { flex: 1 1 100%; display: flex; gap: 10px; }
+.callback-btn-row .btn { flex: 1; white-space: normal; }
 .callback-note { font-size: 0.8rem; color: var(--ink-faint); margin-top: 10px; }
 
 /* ---------- Trust strip ---------- */
@@ -350,4 +352,5 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .hero-navy .cta-row .btn { width: 100%; }
   .hero-photo { aspect-ratio: 508 / 572; }
   .hero-cta { width: 100%; min-height: 60px; }
+  .callback-btn-row { flex-direction: column; }
 }
