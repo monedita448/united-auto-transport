@@ -22,6 +22,8 @@
   --orange: #E8871E;
   --orange-dark: #CB7210;
   --orange-bright: #F2941F;
+  --yellow: #F2B900;
+  --yellow-dark: #E0A800;
   --on-orange: #402400;
 
   --bg: #081226;
@@ -123,6 +125,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .btn-primary { background: var(--orange); color: var(--on-orange); box-shadow: var(--shadow-soft); }
 .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+.btn-yellow { background: var(--yellow); color: var(--on-orange); box-shadow: var(--shadow-soft); }
+.btn-yellow:hover { background: var(--yellow-dark); transform: translateY(-2px); box-shadow: var(--shadow-lift); }
 .btn-navy { background: var(--navy); color: #fff; }
 .btn-navy:hover { background: var(--navy-soft); transform: translateY(-2px); }
 .btn-outline { border: 1.5px solid var(--border); color: var(--ink); }
