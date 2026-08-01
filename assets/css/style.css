@@ -75,6 +75,14 @@ p { color: var(--ink-soft); }
 .lede { font-size: 1.08rem; color: var(--ink-soft); max-width: 600px; }
 .center { text-align: center; }
 .mx-auto { margin-left: auto; margin-right: auto; }
+.promo-video {
+  width: 100%;
+  max-width: 380px;
+  border-radius: var(--radius-lg);
+  background: var(--surface-alt);
+  display: block;
+  margin: 0 auto;
+}
 
 /* Visually hidden but screen-reader accessible - used for labels on
    compact inline forms (e.g. the callback widget) where a visible
