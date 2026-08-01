@@ -99,12 +99,24 @@
     <span class="eyebrow">Nationwide Auto Transport</span>
     <h1>A Real Person Calls You Back — Within Minutes</h1>
     <p class="lede mx-auto">Tell us your number, or call right now. We connect you with FMCSA-verified carriers for open or enclosed vehicle shipping, anywhere in the US.</p>
+
+    <div class="hero-photo">
+      <picture>
+        <source srcset="assets/images/hero-driveway-desktop.webp" type="image/webp" media="(min-width: 721px)">
+        <source srcset="assets/images/hero-driveway-mobile.webp" type="image/webp">
+        <source srcset="assets/images/hero-driveway-desktop.jpg" media="(min-width: 721px)">
+        <img src="assets/images/hero-driveway-mobile.jpg" alt="United AutoTransport driver handing over vehicle keys after a completed delivery" width="508" height="572" loading="eager" fetchpriority="high">
+      </picture>
+    </div>
   </div>
 
   <div class="overlap-card" id="callback">
-    <a href="tel:+18555550199" data-phone-tel data-track-call class="btn btn-primary btn-block btn-lg">
-      <svg class="icon" width="18" height="18"><use href="#i-phone"/></svg>
-      <span data-cta-call-copy>Call now</span>
+    <a href="tel:+18555550199" data-phone-tel data-track-call class="btn btn-primary btn-block btn-lg hero-cta">
+      <span class="cta-line">
+        <svg class="icon" width="18" height="18"><use href="#i-phone"/></svg>
+        <span data-cta-call-copy>Call now</span>
+      </span>
+      <span class="cta-sub">Takes less than 60 seconds</span>
     </a>
     <div class="or-divider"><span>or leave your number</span></div>
     <form data-callback-form data-capture-utm>
