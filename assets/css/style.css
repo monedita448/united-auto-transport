@@ -154,8 +154,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .logo-mark { border-radius: 8px; }
 
 /* ---------- Hero: flowing overlap layout ---------- */
-.hero-navy { background: var(--navy); padding: 40px 0 44px; position: relative; }
-.hero-navy .container { text-align: center; }
+.hero-navy { background: var(--navy); padding: 40px 0 44px; position: relative; overflow: hidden; }
+.hero-navy .container { text-align: center; position: relative; z-index: 1; }
 .hero-navy .eyebrow { color: #9FC1E8; }
 .hero-navy h1 { color: #fff; max-width: 760px; margin: 0 auto 14px; }
 .hero-navy p.lede { color: #B9CBDF; margin: 0 auto; }
@@ -193,6 +193,44 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .callback-form input:focus { outline: none; border-color: var(--orange); }
 .callback-form.has-error input[required] { border-color: #F0644F; }
 .callback-note { font-size: 0.8rem; color: var(--ink-faint); margin-top: 10px; }
+
+/* ---------- Hero route map (pickup → delivery, decorative) ----------
+   Sits behind .hero-navy's text/card, at z-index 0 (the .container and
+   .overlap-card rules above/below lift that content to z-index 1/2).
+   Colored with the existing on-navy blue (#9FC1E8, already used for the
+   eyebrow) rather than --orange on purpose — orange stays reserved for
+   conversion actions only, per the Von Restorff reasoning at the top of
+   this file. Pure SVG/CSS: no images, no extra HTTP requests. */
+.hero-map { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.55; pointer-events: none; }
+.hero-map-dot { fill: rgba(159, 193, 232, 0.22); }
+.hero-map-city { fill: rgba(159, 193, 232, 0.55); }
+.hero-route-line { fill: none; stroke: #9FC1E8; stroke-width: 1.6; stroke-linecap: round; opacity: 0.5; }
+.hero-route-glow { fill: none; stroke: #9FC1E8; stroke-width: 5; stroke-linecap: round; opacity: 0.08; filter: blur(1px); }
+.hero-node-pickup { fill: #9FC1E8; }
+.hero-node-delivery { fill: none; stroke: #9FC1E8; stroke-width: 2; }
+.hero-ping { fill: none; stroke: #9FC1E8; stroke-width: 1.4; opacity: 0; transform-origin: center; transform-box: fill-box; }
+.hero-city-label { font-family: var(--font-sans); font-size: 10px; font-weight: 600; letter-spacing: 0.02em; fill: rgba(255, 255, 255, 0.55); }
+.hero-traveler { fill: #fff; filter: drop-shadow(0 0 4px rgba(159, 193, 232, 0.8)); }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-ping { animation: heroPing 2.6s ease-out infinite; }
+  .hero-ping.b { animation-delay: 1.3s; }
+  .hero-traveler { animation: heroTravel 4.5s linear infinite; }
+  .hero-traveler.b { animation-delay: 1.6s; }
+}
+@keyframes heroPing {
+  0% { opacity: 0.6; transform: scale(0.3); }
+  75% { opacity: 0; transform: scale(2.6); }
+  100% { opacity: 0; transform: scale(2.6); }
+}
+@keyframes heroTravel {
+  from { offset-distance: 0%; opacity: 0; }
+  6% { opacity: 1; }
+  94% { opacity: 1; }
+  to { offset-distance: 100%; opacity: 0; }
+}
+@media (max-width: 720px) {
+  .hero-map { opacity: 0.4; }
+}
 
 /* ---------- Trust strip ---------- */
 .trust-strip { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 22px 0; }
