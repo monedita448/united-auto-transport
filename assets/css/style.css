@@ -275,6 +275,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 .field input:focus, .field select:focus { outline: none; border-color: var(--orange); }
 .field .hint { font-size: 0.76rem; color: var(--ink-faint); margin-top: 4px; }
+.field .hint.hint-warn { color: #F0644F; }
 .field .error { font-size: 0.78rem; color: #F0644F; margin-top: 4px; display: none; }
 .field.has-error input { border-color: #F0644F; }
 .field.has-error .error { display: block; }

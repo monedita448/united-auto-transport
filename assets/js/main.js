@@ -327,7 +327,48 @@
         if (backBtn) { current = Math.max(current - 1, 0); render(); }
       });
 
+      initZipLookup(root);
       render();
+    }
+
+    /* ---------- 5b-i. Live ZIP -> city/state suggestion (Zippopotam.us, free, no key).
+       Purely informational — never blocks or alters submission, just shows the
+       customer what city/state their ZIP resolves to so typos get caught early. */
+    function initZipLookup(root) {
+      root.querySelectorAll('input[data-pattern="zip"]').forEach(function (input) {
+        var hint = document.createElement('div');
+        hint.className = 'hint zip-hint';
+        hint.setAttribute('aria-live', 'polite');
+        input.insertAdjacentElement('afterend', hint);
+
+        var debounceTimer, lastZip = '';
+
+        input.addEventListener('input', function () {
+          var zip = input.value.trim().slice(0, 5);
+          hint.textContent = '';
+          hint.classList.remove('hint-warn');
+          clearTimeout(debounceTimer);
+          if (!/^\d{5}$/.test(zip)) return;
+
+          debounceTimer = setTimeout(function () {
+            if (zip === lastZip) return;
+            lastZip = zip;
+            fetch('https://api.zippopotam.us/us/' + zip)
+              .then(function (res) { if (!res.ok) throw new Error('not found'); return res.json(); })
+              .then(function (data) {
+                if (zip !== input.value.trim().slice(0, 5)) return; // user kept typing, stale result
+                var place = data.places && data.places[0];
+                if (place) hint.textContent = place['place name'] + ', ' + place['state abbreviation'];
+              })
+              .catch(function () {
+                if (zip === input.value.trim().slice(0, 5)) {
+                  hint.textContent = 'ZIP not recognized — double check it';
+                  hint.classList.add('hint-warn');
+                }
+              });
+          }, 350);
+        });
+      });
     }
 
     function submitFullLead(root) {
