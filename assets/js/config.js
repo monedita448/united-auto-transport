@@ -36,7 +36,7 @@ window.UAT_CONFIG = {
   // LEAD_NOTIFIER_SETUP.md for the five-minute setup. Both the callback
   // form and the quote calculator POST here — leave the placeholder in
   // place and lead data just logs to the console instead of failing.
-  leadWebhookUrl: "https://script.google.com/macros/s/AKfycbz9dZlDmSwUfwED3M8tb8wH2bl9UtwtVUePCRixpAZpCXqXH-OEFz6f51Pf4OLuhMxX/exec",
+  leadWebhookUrl: "https://script.google.com/macros/s/AKfycbyfWug7CHAfG9lAUMLf4dq5n8TA8AXnTgmKhNBer5mQq0itBx6LnJqObJEgnxeKnPz30w/exec",
   ga4MeasurementId: "G-7YE5S67H6F",
   metaPixelId: "1154904137901908"
 };
