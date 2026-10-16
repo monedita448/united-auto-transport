@@ -381,3 +381,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .hero-cta-row { flex-direction: column; }
   .hero-cta-row .btn { flex: 0 1 auto; width: 100%; }
 }
+
+/* ---------- Blog ---------- */
+.blog-prose { font-size: 1.04rem; line-height: 1.75; }
+.blog-prose h2 { margin: 40px 0 12px; }
+.blog-prose h3 { margin: 26px 0 8px; }
+.blog-prose p, .blog-prose ul, .blog-prose ol, .blog-prose table { margin-bottom: 16px; }
+.blog-prose ul, .blog-prose ol { padding-left: 22px; color: var(--ink-soft); }
+.blog-prose ul { list-style: disc; }
+.blog-prose ol { list-style: decimal; }
+.blog-prose li { margin-bottom: 6px; }
+.blog-prose li::marker { color: var(--orange); }
+.blog-prose strong { color: var(--ink); }
+.blog-prose a { color: var(--orange-bright); text-decoration: underline; text-underline-offset: 3px; }
+.blog-prose a:hover { color: var(--orange); }
+.blog-prose table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; font-size: 0.95rem; }
+.blog-prose th, .blog-prose td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; color: var(--ink-soft); }
+.blog-prose th { background: var(--surface-alt); color: var(--ink); }
+.blog-card { display: flex; flex-direction: column; gap: 8px; }
+.blog-card h3 { color: var(--ink); }
+.blog-date { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange-bright); }
