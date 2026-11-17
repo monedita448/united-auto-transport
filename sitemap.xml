@@ -246,6 +246,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.united-autotransport.com/blog/car-shipping-routes-transit-times.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.united-autotransport.com/es/blog/</loc>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -313,6 +319,12 @@
   <url>
     <loc>https://www.united-autotransport.com/es/blog/expedited-car-shipping-for-dealers.html</loc>
     <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.united-autotransport.com/es/blog/car-shipping-routes-transit-times.html</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
