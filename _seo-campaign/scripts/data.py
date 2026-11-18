@@ -361,3 +361,140 @@ DAYS = [
   "", "Asunto: How long will your car take? (route guide)",
  ),
 ]
+
+# ---------------- PLAN FESTIVO Q4 (19-nov a 31-dic 2026), días 31-74 ----------------
+# Día 31: mié 2026-11-18 (agregado 2026-11-17 para no dejar el día sin post)
+DAYS.append(('Ruta', 'Snowbirds (Sur → FL)', 'north carolina to florida car shipping', 'ship car from nc to fl; charlotte to florida auto transport; raleigh to florida car shipping', 'North Carolina to Florida Car Shipping', 'north-carolina-to-florida-car-shipping', 'Shipping a car from North Carolina to Florida? Typical transit time, open vs. enclosed, door-to-door pickup in Charlotte, Raleigh and beyond, and how to book. Free quote.', 'H2 Why NC drivers ship to Florida in winter | H2 Typical transit time | H2 Door-to-door pickup across North Carolina | H2 Open vs. enclosed | H2 How to prepare | H2 How to book before the holidays | H2 FAQ | CTA box', f"{BLOG}snowbird-car-shipping-guide.html; {BLOG}holiday-car-shipping-deadlines-2026.html; {OPEN}; {Q}", CTA_Q, 'North Carolina to Florida this winter? 🌴 Skip the drive down I-95. We ship your car door-to-door with FMCSA-verified carriers. Free quote, link in bio #snowbird #northcarolina #florida', 'Heading from North Carolina to Florida? We ship cars door-to-door from Charlotte, Raleigh, Greensboro and across NC with FMCSA-verified carriers. Get your free quote today.', 'North Carolina to Florida is one of the steadiest snowbird lanes on the East Coast. We put together a guide on typical transit times, door-to-door pickup in Charlotte, Raleigh and beyond, and booking before the holiday weeks fill carrier trucks. #autotransport #snowbirds #carshipping', 'Asunto: North Carolina to Florida? Your car can beat you there'))
+Q4 = {}
+Q4[31] = {'fecha': '2026-11-18', 'gancho': 'Temporada snowbird', 'ugc': False, 'social_only': False}
+# Campos vacíos: la rutina diaria los completa con una semana de anticipación.
+# Q4[día] = gancho festivo, ugc (video UGC ese día) y social_only (solo redes, sin blog).
+# Día 32: jue 2026-11-19
+DAYS.append(('Guía', 'Todos', 'holiday car shipping', 'when to book car shipping for christmas; thanksgiving car transport; ship car before holidays', 'Holiday Car Shipping 2026: When to Book for Thanksgiving and Christmas Delivery', 'holiday-car-shipping-deadlines-2026', 'Planning to ship a car for Thanksgiving or Christmas? When to book, how holiday demand affects pickup windows, and how to lock in your date. Free quote.', 'H2 Why holiday weeks fill carrier trucks | H2 When to book for Thanksgiving delivery | H2 When to book for Christmas delivery | H2 What changes during holiday weeks | H2 Open vs. enclosed in winter | H2 How to book in 3 steps | H2 FAQ | CTA box', f'{HIW}; {OPEN}; {ENC}; {Q}', CTA_Q, 'Want your car there for the holidays? 🦃🎄 Holiday weeks fill carrier trucks fast. Book now and lock in your pickup window, door-to-door with FMCSA-verified carriers. 👉 Free quote, link in bio #carshipping #holidaytravel #snowbird', 'Holiday season is the busiest time to ship a car. Book early to lock in your pickup window for Thanksgiving or Christmas delivery. Door-to-door, FMCSA-verified carriers. Get your free quote today.', 'Holiday weeks are the tightest time of year for carrier capacity: snowbird moves, year-end dealer inventory and holiday travel all compete for the same trucks. We put together a simple booking timeline for Thanksgiving and Christmas delivery. #autotransport #logistics #carshipping', 'Asunto: Want your car there for the holidays? Book this week'))
+Q4[32] = {'fecha': '2026-11-19', 'gancho': 'Fechas límite festivas', 'ugc': True, 'social_only': False}
+# Día 33: vie 2026-11-20
+DAYS.append(('Dealers', 'Concesionarios', 'dealer inventory transport black friday', 'year-end dealer car transport; dealership vehicle shipping december; move dealer inventory fast', 'Black Friday to Year-End: How Dealers Keep Inventory Moving', 'black-friday-dealer-inventory-transport', 'Black Friday through December is the busiest stretch for dealers. How to keep inventory, trades and sold units moving with a reliable transport partner.', 'H2 Why Black Friday to year-end strains transport | H2 Sold units to out-of-state buyers | H2 Dealer trades and transfers | H2 Auction pickups in December | H2 Planning a weekly transport schedule | H2 What to expect from a transport partner | H2 FAQ | CTA box', f'{BLOG}dealer-auto-transport.html; {BLOG}q4-dealer-inventory-transport-plan.html; {Q}', CTA_CALL, 'Dealers 🚗 Black Friday to year-end is your busiest stretch. Keep sold units, trades and auction buys moving with one transport partner. Call (972) 833-2614 to set up your dealer account. #cardealer #autotransport', 'Dealers: Black Friday through December is your busiest selling season. We move sold units, dealer trades and auction purchases door-to-door. Call to set up a dealer account.', "From Black Friday to December 31, dealers compete with snowbird and holiday traffic for the same carrier capacity. A weekly transport schedule keeps sold units, trades and auction buys moving. Here's how we plan it with our dealer partners. #cardealers #automotive #logistics", 'Asunto: Black Friday to year-end: keep your inventory moving'))
+Q4[33] = {'fecha': '2026-11-20', 'gancho': 'Black Friday / cierre de año', 'ugc': True, 'social_only': False}
+# Día 34: sáb 2026-11-21
+DAYS.append(('Ruta', 'Snowbirds (Midwest → FL)', 'illinois to florida car shipping', 'chicago to florida auto transport; ship car from illinois to florida; snowbird car shipping illinois', 'Illinois to Florida Car Shipping for Snowbirds', 'illinois-to-florida-car-shipping', 'Shipping a car from Illinois to Florida for the winter? Typical transit time, open vs. enclosed, door-to-door pickup in Chicagoland and how to book. Free quote.', 'H2 Why Illinois snowbirds ship instead of drive | H2 Typical transit time | H2 Pickup across Chicago and Illinois | H2 Open vs. enclosed in winter | H2 How to prepare the car | H2 How to book | H2 FAQ | CTA box', f'{BLOG}chicago-to-arizona-florida-car-shipping.html; {BLOG}snowbird-car-shipping-guide.html; {OPEN}; {Q}', CTA_Q, 'Illinois to Florida this winter? 🌴 Skip the 1,200-mile drive. We ship your car door-to-door with FMCSA-verified carriers. Free quote, link in bio #snowbird #chicago #florida', 'Heading from Illinois to Florida for the winter? We ship cars door-to-door from Chicagoland and across Illinois with FMCSA-verified carriers. Get a free quote today.', 'Illinois snowbirds are booking their Florida moves now. Our new guide covers typical transit from Chicagoland to Florida, open vs. enclosed in winter and how to book before holiday weeks fill carrier trucks. #autotransport #snowbirds #carshipping', 'Asunto: Illinois to Florida this winter? Skip the drive'))
+Q4[34] = {'fecha': '2026-11-21', 'gancho': 'Temporada snowbird', 'ugc': False, 'social_only': False}
+# Día 35: dom 2026-11-22
+DAYS.append(('Segmento', 'Militares', 'military car shipping pcs', 'pcs car shipping december; military holiday leave car transport; ship pov military', 'Military Holiday Leave and PCS Car Shipping', 'military-holiday-pcs-car-shipping', 'PCS orders over the holidays or heading home on leave? How to ship your personal vehicle door-to-door, what documents you need and when to book.', "H2 PCS moves during the holidays | H2 When the government ships your POV and when it doesn't | H2 Shipping a second vehicle | H2 Documents you'll need | H2 Timing around holiday leave | H2 How to book | H2 FAQ | CTA box", f'{BLOG}pcs-military-car-shipping.html; {HIW}; {Q}', CTA_Q, 'PCS orders over the holidays? 🇺🇸 We ship your car door-to-door to your new duty station with FMCSA-verified carriers. Free quote, link in bio #militarylife #pcs #militaryfamily', 'Military families: PCS orders over the holidays? We ship your personal vehicle door-to-door to your new duty station. Get a free quote today.', "PCS orders don't stop for the holidays. For service members shipping a second vehicle or moving around holiday leave, we put together a guide on documents, timing and door-to-door options. #militarylife #pcs #autotransport", "Asunto: PCS over the holidays? We'll move your car"))
+Q4[35] = {'fecha': '2026-11-22', 'gancho': 'Licencia navideña / PCS', 'ugc': False, 'social_only': False}
+# Día 36: lun 2026-11-23
+DAYS.append(('Ruta', 'Snowbirds (NE → AZ)', 'new york to arizona car shipping', 'ship car ny to az; snowbird car shipping arizona; new york to phoenix auto transport', 'New York to Arizona Car Shipping', 'new-york-to-arizona-car-shipping', 'Shipping a car from New York to Arizona for the winter? Typical transit time, open vs. enclosed, door-to-door pickup and how to book early. Free quote.', 'H2 Why New Yorkers winter in Arizona | H2 Typical transit time | H2 Door-to-door pickup in NYC, Long Island and Upstate | H2 Open vs. enclosed | H2 How to prepare | H2 How to book | H2 FAQ | CTA box', f'{BLOG}snowbird-car-shipping-to-arizona.html; {BLOG}new-york-to-florida-car-shipping.html; {OPEN}; {Q}', CTA_Q, 'New York to Arizona this winter? 🌵 Your car can meet you in Phoenix or Scottsdale. Door-to-door with FMCSA-verified carriers. Free quote, link in bio #snowbird #arizona #newyork', 'Wintering in Arizona? We ship cars from New York to Phoenix, Scottsdale and Tucson door-to-door with FMCSA-verified carriers. Free quote today.', "Arizona is a top winter destination for New Yorkers, and it's a long haul. Our guide covers typical transit times, door-to-door pickup in NYC, Long Island and Upstate, and when to book. #autotransport #snowbirds #carshipping", 'Asunto: New York to Arizona? Your car can meet you there'))
+Q4[36] = {'fecha': '2026-11-23', 'gancho': 'Temporada snowbird', 'ugc': False, 'social_only': False}
+# Día 37: mar 2026-11-24
+DAYS.append(('Guía', 'Todos', 'winter car shipping', 'shipping a car in winter; car transport snow delays; how to prepare car for winter shipping', 'Winter Car Shipping: Weather, Delays and How to Prepare', 'winter-car-shipping-tips', 'Shipping a car in winter? How weather affects pickup and delivery, when enclosed transport makes sense, and how to prepare your car. Free quote.', 'H2 How winter weather affects car shipping | H2 Realistic pickup and delivery windows | H2 When to choose enclosed transport | H2 Preparing your car for cold weather | H2 What to check at delivery (Bill of Lading) | H2 FAQ | CTA box', f'{BLOG}how-to-prepare-car-for-transport.html; {BLOG}open-vs-enclosed-car-transport.html; {ENC}; {Q}', CTA_Q, "Shipping your car this winter? ❄️ Snow can shift pickup windows. Here's how to plan, when enclosed makes sense and what to check on the Bill of Lading. Free quote, link in bio #carshipping #winter", 'Shipping a car this winter? Plan for flexible pickup windows, consider enclosed transport for salt and snow, and inspect on the Bill of Lading at delivery. Free quote today.', 'Winter is when pickup windows need the most flexibility. A practical guide on how snow affects car shipping, when enclosed transport makes sense and what to check on the Bill of Lading at delivery. #autotransport #logistics #winter', 'Asunto: Shipping a car this winter? Read this first'))
+Q4[37] = {'fecha': '2026-11-24', 'gancho': 'Invierno', 'ugc': True, 'social_only': False}
+# Día 38: mié 2026-11-25
+DAYS.append(('Guía', 'Todos', 'thanksgiving car shipping', 'car shipping holiday week; auto transport thanksgiving schedule; ship car thanksgiving', 'Car Shipping During Thanksgiving Week: What Changes', 'thanksgiving-week-car-shipping', 'Shipping a car during Thanksgiving week? What changes with carriers, pickups and deliveries over the holiday, and how to keep your dates on track.', 'H2 Do carriers run on Thanksgiving week? | H2 Pickup and delivery around the holiday | H2 Who needs to be there (and the Bill of Lading) | H2 Tips to keep your dates | H2 FAQ | CTA box', f'{BLOG}holiday-car-shipping-deadlines-2026.html; {HIW}; {Q}', CTA_Q, "Shipping a car this Thanksgiving week? 🦃 Carriers keep rolling, but holiday schedules shift. Here's how to keep your dates on track. Free quote, link in bio #thanksgiving #carshipping", 'Shipping a car during Thanksgiving week? Carriers keep running, but plan for holiday schedules and make sure someone can sign the Bill of Lading. Free quote today.', "Carriers keep running through Thanksgiving week, but schedules shift. Here's what changes for pickups and deliveries over the holiday, and how customers can keep their dates on track. #autotransport #logistics #thanksgiving", "Asunto: Shipping a car on Thanksgiving week? Here's what changes"))
+Q4[38] = {'fecha': '2026-11-25', 'gancho': 'Semana de Thanksgiving', 'ugc': False, 'social_only': False}
+# Día 39: jue 2026-11-26
+DAYS.append(('Social festivo', 'Todos', "", "", 'Happy Thanksgiving from United Auto Transport', 'happy-thanksgiving-2026', "", "", "", "", "", "", "", ""))
+Q4[39] = {'fecha': '2026-11-26', 'gancho': 'Thanksgiving (26-nov)', 'ugc': True, 'social_only': True}
+# Día 40: vie 2026-11-27
+DAYS.append(('Segmento', 'Compradores online', "", "", 'Bought a Car on Black Friday? How to Ship It Home', 'ship-car-bought-black-friday', "", "", "", "", "", "", "", ""))
+Q4[40] = {'fecha': '2026-11-27', 'gancho': 'Black Friday (27-nov)', 'ugc': True, 'social_only': False}
+# Día 41: sáb 2026-11-28
+DAYS.append(('Ruta', 'Snowbirds (NE → FL)', "", "", 'Connecticut to Florida Car Shipping', 'connecticut-to-florida-car-shipping', "", "", "", "", "", "", "", ""))
+Q4[41] = {'fecha': '2026-11-28', 'gancho': 'Temporada snowbird', 'ugc': False, 'social_only': False}
+# Día 42: dom 2026-11-29
+DAYS.append(('Segmento', 'Estudiantes', "", "", 'Shipping a Car Home for Winter Break', 'ship-car-home-winter-break', "", "", "", "", "", "", "", ""))
+Q4[42] = {'fecha': '2026-11-29', 'gancho': 'Vacaciones de invierno', 'ugc': False, 'social_only': False}
+# Día 43: lun 2026-11-30
+DAYS.append(('Segmento', 'Compradores online', "", "", 'How to Ship a Car You Bought Online From Out of State', 'ship-car-bought-online-out-of-state', "", "", "", "", "", "", "", ""))
+Q4[43] = {'fecha': '2026-11-30', 'gancho': 'Cyber Monday (30-nov)', 'ugc': True, 'social_only': False}
+# Día 44: mar 2026-12-01
+DAYS.append(('Dealers', 'Concesionarios', "", "", 'Year-End Aged Inventory Transfers for Dealers', 'dealer-year-end-inventory-transfers', "", "", "", "", "", "", "", ""))
+Q4[44] = {'fecha': '2026-12-01', 'gancho': 'Cierre de año', 'ugc': False, 'social_only': False}
+# Día 45: mié 2026-12-02
+DAYS.append(('Ruta', 'Snowbirds (Sur → FL)', "", "", 'Virginia to Florida Car Shipping', 'virginia-to-florida-car-shipping', "", "", "", "", "", "", "", ""))
+Q4[45] = {'fecha': '2026-12-02', 'gancho': 'Temporada snowbird', 'ugc': False, 'social_only': False}
+# Día 46: jue 2026-12-03
+DAYS.append(('Guía', 'Todos (confianza)', "", "", 'Car Shipping Insurance Explained: What Covers Your Vehicle', 'car-shipping-insurance-explained', "", "", "", "", "", "", "", ""))
+Q4[46] = {'fecha': '2026-12-03', 'gancho': 'Educación', 'ugc': False, 'social_only': False}
+# Día 47: vie 2026-12-04
+DAYS.append(('Guía', 'Regalos', "", "", 'Shipping a Car as a Christmas Gift: Timing and Surprise Delivery', 'ship-car-as-christmas-gift', "", "", "", "", "", "", "", ""))
+Q4[47] = {'fecha': '2026-12-04', 'gancho': 'Navidad', 'ugc': True, 'social_only': False}
+# Día 48: sáb 2026-12-05
+DAYS.append(('Ruta', 'Snowbirds (→ TX)', "", "", 'Snowbird Car Shipping to South Texas', 'snowbird-car-shipping-to-texas', "", "", "", "", "", "", "", ""))
+Q4[48] = {'fecha': '2026-12-05', 'gancho': 'Temporada snowbird', 'ugc': False, 'social_only': False}
+# Día 49: dom 2026-12-06
+DAYS.append(('Guía', 'Todos (confianza)', "", "", 'Door-to-Door vs Terminal-to-Terminal Car Shipping', 'door-to-door-vs-terminal-to-terminal', "", "", "", "", "", "", "", ""))
+Q4[49] = {'fecha': '2026-12-06', 'gancho': 'Educación', 'ugc': False, 'social_only': False}
+# Día 50: lun 2026-12-07
+DAYS.append(('Dealers', 'Concesionarios / subastas', "", "", 'December Auction Buying: Transport Plan for Dealers', 'december-auction-transport-dealers', "", "", "", "", "", "", "", ""))
+Q4[50] = {'fecha': '2026-12-07', 'gancho': 'Diciembre', 'ugc': False, 'social_only': False}
+# Día 51: mar 2026-12-08
+DAYS.append(('Ruta', 'Mudanza', "", "", 'Florida to New York Car Shipping', 'florida-to-new-york-car-shipping', "", "", "", "", "", "", "", ""))
+Q4[51] = {'fecha': '2026-12-08', 'gancho': 'Mudanza de fin de año', 'ugc': False, 'social_only': False}
+# Día 52: mié 2026-12-09
+DAYS.append(('Guía', 'Todos', "", "", 'Christmas Car Shipping: Booking Cutoffs and Holiday Schedules', 'christmas-car-shipping-cutoffs', "", "", "", "", "", "", "", ""))
+Q4[52] = {'fecha': '2026-12-09', 'gancho': 'Navidad', 'ugc': True, 'social_only': False}
+# Día 53: jue 2026-12-10
+DAYS.append(('Segmento', 'Relocalización corporativa', "", "", 'Starting a New Job in January? Ship Your Car Before You Move', 'new-job-january-car-shipping', "", "", "", "", "", "", "", ""))
+Q4[53] = {'fecha': '2026-12-10', 'gancho': 'Inicio de año', 'ugc': False, 'social_only': False}
+# Día 54: vie 2026-12-11
+DAYS.append(('Ruta', 'Snowbirds (NE → FL)', "", "", 'Maryland to Florida Car Shipping', 'maryland-to-florida-car-shipping', "", "", "", "", "", "", "", ""))
+Q4[54] = {'fecha': '2026-12-11', 'gancho': 'Temporada snowbird', 'ugc': False, 'social_only': False}
+# Día 55: sáb 2026-12-12
+DAYS.append(('Dealers', 'Concesionarios lujo', "", "", 'Enclosed Holiday Delivery for Luxury Dealer Sales', 'enclosed-holiday-delivery-luxury-dealers', "", "", "", "", "", "", "", ""))
+Q4[55] = {'fecha': '2026-12-12', 'gancho': 'Navidad', 'ugc': True, 'social_only': False}
+# Día 56: dom 2026-12-13
+DAYS.append(('Guía', 'Todos (confianza)', "", "", 'How to Avoid Car Shipping Scams', 'avoid-car-shipping-scams', "", "", "", "", "", "", "", ""))
+Q4[56] = {'fecha': '2026-12-13', 'gancho': 'Educación', 'ugc': False, 'social_only': False}
+# Día 57: lun 2026-12-14
+DAYS.append(('Ruta', 'Mudanza costa a costa', "", "", 'Washington to California Car Shipping', 'washington-to-california-car-shipping', "", "", "", "", "", "", "", ""))
+Q4[57] = {'fecha': '2026-12-14', 'gancho': 'Mudanza', 'ugc': False, 'social_only': False}
+# Día 58: mar 2026-12-15
+DAYS.append(('Segmento', 'Estudiantes', "", "", 'Shipping a Car Back to College in January', 'ship-car-back-to-college-january', "", "", "", "", "", "", "", ""))
+Q4[58] = {'fecha': '2026-12-15', 'gancho': 'Regreso en enero', 'ugc': False, 'social_only': False}
+# Día 59: mié 2026-12-16
+DAYS.append(('Guía', 'Todos', "", "", "Last-Minute Car Shipping Before Christmas: What's Still Possible", 'last-minute-christmas-car-shipping', "", "", "", "", "", "", "", ""))
+Q4[59] = {'fecha': '2026-12-16', 'gancho': 'Navidad', 'ugc': True, 'social_only': False}
+# Día 60: jue 2026-12-17
+DAYS.append(('Dealers', 'Concesionarios', "", "", 'Dealer Holiday Delivery to Out-of-State Buyers', 'dealer-holiday-delivery-out-of-state', "", "", "", "", "", "", "", ""))
+Q4[60] = {'fecha': '2026-12-17', 'gancho': 'Cierre de año', 'ugc': False, 'social_only': False}
+# Día 61: vie 2026-12-18
+DAYS.append(('Ruta', 'Snowbirds (Midwest → AZ)', "", "", 'Minnesota to Arizona Car Shipping', 'minnesota-to-arizona-car-shipping', "", "", "", "", "", "", "", ""))
+Q4[61] = {'fecha': '2026-12-18', 'gancho': 'Temporada snowbird', 'ugc': False, 'social_only': False}
+# Día 62: sáb 2026-12-19
+DAYS.append(('Ruta', 'Snowbirds (NE → FL)', "", "", 'Boston to Florida Car Shipping in Winter', 'boston-to-florida-winter-car-shipping', "", "", "", "", "", "", "", ""))
+Q4[62] = {'fecha': '2026-12-19', 'gancho': 'Temporada snowbird', 'ugc': False, 'social_only': False}
+# Día 63: dom 2026-12-20
+DAYS.append(('Guía', 'Todos', "", "", "Shipping a Car Between Christmas and New Year's", 'car-shipping-between-holidays', "", "", "", "", "", "", "", ""))
+Q4[63] = {'fecha': '2026-12-20', 'gancho': 'Entre fiestas', 'ugc': False, 'social_only': False}
+# Día 64: lun 2026-12-21
+DAYS.append(('Dealers', 'Concesionarios', "", "", 'Q1 2027 Transport Plan for Dealers', 'q1-dealer-transport-plan', "", "", "", "", "", "", "", ""))
+Q4[64] = {'fecha': '2026-12-21', 'gancho': 'Plan Q1', 'ugc': False, 'social_only': False}
+# Día 65: mar 2026-12-22
+DAYS.append(('Ruta', 'Snowbirds (Sur → AZ)', "", "", 'Texas to Arizona Car Shipping', 'texas-to-arizona-car-shipping', "", "", "", "", "", "", "", ""))
+Q4[65] = {'fecha': '2026-12-22', 'gancho': 'Temporada snowbird', 'ugc': False, 'social_only': False}
+# Día 66: mié 2026-12-23
+DAYS.append(('Guía', 'Todos', "", "", 'New Year Move Checklist: Shipping Your Car Without Stress', 'new-year-move-car-shipping-checklist', "", "", "", "", "", "", "", ""))
+Q4[66] = {'fecha': '2026-12-23', 'gancho': 'Año nuevo', 'ugc': True, 'social_only': False}
+# Día 67: jue 2026-12-24
+DAYS.append(('Social festivo', 'Todos', "", "", 'Holiday thanks to our customers and carrier drivers', 'holiday-thanks-2026', "", "", "", "", "", "", "", ""))
+Q4[67] = {'fecha': '2026-12-24', 'gancho': 'Nochebuena (24-dic)', 'ugc': False, 'social_only': True}
+# Día 68: vie 2026-12-25
+DAYS.append(('Social festivo', 'Todos', "", "", 'Merry Christmas from United Auto Transport', 'merry-christmas-2026', "", "", "", "", "", "", "", ""))
+Q4[68] = {'fecha': '2026-12-25', 'gancho': 'Navidad (25-dic)', 'ugc': True, 'social_only': True}
+# Día 69: sáb 2026-12-26
+DAYS.append(('Ruta', 'Mudanza', "", "", 'Arizona to California Car Shipping', 'arizona-to-california-car-shipping', "", "", "", "", "", "", "", ""))
+Q4[69] = {'fecha': '2026-12-26', 'gancho': 'Mudanza de año nuevo', 'ugc': False, 'social_only': False}
+# Día 70: dom 2026-12-27
+DAYS.append(('Segmento', 'Militares', "", "", 'January PCS Season: Book Military Car Shipping Early', 'january-pcs-military-car-shipping', "", "", "", "", "", "", "", ""))
+Q4[70] = {'fecha': '2026-12-27', 'gancho': 'PCS enero', 'ugc': False, 'social_only': False}
+# Día 71: lun 2026-12-28
+DAYS.append(('Guía', 'Todos', "", "", 'How Car Shipping Prices Move in January', 'january-car-shipping-prices', "", "", "", "", "", "", "", ""))
+Q4[71] = {'fecha': '2026-12-28', 'gancho': 'Tendencias', 'ugc': False, 'social_only': False}
+# Día 72: mar 2026-12-29
+DAYS.append(('Dealers', 'Concesionarios', "", "", 'How Dealers Use Expedited Transport at Year-End', 'dealer-year-end-expedited-transport', "", "", "", "", "", "", "", ""))
+Q4[72] = {'fecha': '2026-12-29', 'gancho': 'Fin de año', 'ugc': False, 'social_only': False}
+# Día 73: mié 2026-12-30
+DAYS.append(('Social festivo', 'Todos', "", "", '2026 in review: thank you for trusting us with your car', '2026-year-in-review', "", "", "", "", "", "", "", ""))
+Q4[73] = {'fecha': '2026-12-30', 'gancho': 'Fin de año (30-dic)', 'ugc': False, 'social_only': True}
+# Día 74: jue 2026-12-31
+DAYS.append(('Social festivo', 'Todos', "", "", 'Happy New Year: book your 2027 move with a free quote', 'happy-new-year-2027', "", "", "", "", "", "", "", ""))
+Q4[74] = {'fecha': '2026-12-31', 'gancho': 'Año Nuevo (31-dic)', 'ugc': True, 'social_only': True}
