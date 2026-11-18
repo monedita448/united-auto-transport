@@ -420,3 +420,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .hero-navy .hero-map { opacity: 0.25; }
   .hero-photo img { object-position: 72% 50%; }
 }
+
+/* ---------- Tablet header fit (721-960px): keep nav on one row, no sideways scroll ---------- */
+@media (min-width: 721px) and (max-width: 960px) {
+  .nav-row { padding: 12px 16px; gap: 10px; }
+  .nav-links { gap: 14px; }
+  .nav-links a { font-size: 0.85rem; }
+  .nav-cta { gap: 8px; }
+  .nav-cta .btn { padding: 9px 12px; font-size: 0.85rem; }
+}
+@media (min-width: 721px) and (max-width: 820px) {
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: 0.8rem; }
+  .nav-cta { gap: 6px; }
+  .nav-cta .btn { padding: 8px 10px; font-size: 0.8rem; }
+}
