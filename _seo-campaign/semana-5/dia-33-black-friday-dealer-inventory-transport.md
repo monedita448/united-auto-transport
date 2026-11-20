@@ -6,7 +6,6 @@ meta_description: "Black Friday through December is the busiest stretch for deal
 primary_keyword: dealer inventory transport black friday
 secondary_keywords: year-end dealer car transport, dealership vehicle shipping december, move dealer inventory fast
 internal_links: /blog/dealer-auto-transport, /blog/q4-dealer-inventory-transport-plan, /get-a-quote.html
-video: assets/video/ugc/black-friday-dealer-inventory-transport.mp4
 ---
 
 # Black Friday to Year-End: How Dealers Keep Inventory Moving

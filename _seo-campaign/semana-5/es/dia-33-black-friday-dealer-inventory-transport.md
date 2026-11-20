@@ -3,7 +3,6 @@ day: 33 (Fri, Nov 20, 2026)
 title: "De Black Friday a fin de año: cómo los concesionarios mantienen el inventario en movimiento"
 slug: /blog/black-friday-dealer-inventory-transport
 meta_description: "De Black Friday a diciembre es la temporada más fuerte para los concesionarios. Cómo mover inventario, intercambios y unidades vendidas con un socio de transporte confiable."
-video: assets/video/ugc/black-friday-dealer-inventory-transport.mp4
 img_tag: "Concesionarios"
 img_title: "Black Friday a fin de año"
 img_sub: "Mantén tu inventario en movimiento"
