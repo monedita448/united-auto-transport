@@ -6,7 +6,6 @@ meta_description: "Shipping a car in winter? How weather affects pickup and deli
 primary_keyword: winter car shipping
 secondary_keywords: shipping a car in winter, car transport snow delays, how to prepare car for winter shipping
 internal_links: /blog/how-to-prepare-car-for-transport, /blog/open-vs-enclosed-car-transport, /services/enclosed-auto-transport.html, /get-a-quote.html
-video: assets/video/ugc/winter-car-shipping-tips.mp4
 ---
 
 # Winter Car Shipping: Weather, Delays and How to Prepare
