@@ -114,6 +114,8 @@ outdir = os.path.join(REPO, "es", "blog")
 os.makedirs(outdir, exist_ok=True)
 for f in sorted(glob.glob(f"{SRC}/semana-*/es/dia-*.md")):
     meta, body = parse(f)
+    if not body.strip():  # social-only day: front-matter only, no blog post
+        continue
     day = int(re.match(r"(\d+)", meta["day"]).group(1))
     date = START + datetime.timedelta(days=day - 1)
     if date > CUT:
