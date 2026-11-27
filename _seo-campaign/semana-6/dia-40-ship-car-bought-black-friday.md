@@ -6,7 +6,6 @@ meta_description: "Bought a car online or out of state on Black Friday? How to s
 primary_keyword: ship a car bought online
 secondary_keywords: ship car bought out of state, black friday car deal shipping, ship car from dealer to home
 internal_links: /blog/dealer-home-delivery-out-of-state-buyers, /blog/bill-of-lading-car-shipping, /blog/open-vs-enclosed-car-transport, /get-a-quote.html
-video: assets/video/ugc/ship-car-bought-black-friday.mp4
 ---
 
 # Bought a Car on Black Friday? How to Ship It Home

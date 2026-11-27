@@ -306,6 +306,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.united-autotransport.com/blog/ship-car-bought-black-friday.html</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.united-autotransport.com/es/blog/</loc>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -433,6 +439,12 @@
   <url>
     <loc>https://www.united-autotransport.com/es/blog/ship-car-as-christmas-gift.html</loc>
     <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.united-autotransport.com/es/blog/ship-car-bought-black-friday.html</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
